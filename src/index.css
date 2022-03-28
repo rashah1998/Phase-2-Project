@@ -15,3 +15,8 @@ body {
   background: #16ff35;
   margin-right: 10px;
 }
+
+img {
+  height: 200px;
+  width: 200px;
+}

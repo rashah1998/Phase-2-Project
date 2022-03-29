@@ -13,7 +13,7 @@ function RestaurantCard({restaurant}) {
           <h4>{name}</h4>
           <p>{region}, {country}</p>
           <h5>{address}</h5>
-          <a class="button" href={url}>Order Here</a>
+          <a className="button" href={url}>Order Here</a>
           </div>
           </div>
         </li>

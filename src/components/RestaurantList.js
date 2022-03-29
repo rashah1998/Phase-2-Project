@@ -1,8 +1,11 @@
 import RestaurantCard from './RestaurantCard';
 
-function RestaurantList({restaurants}) {
+function RestaurantList({restaurants, regionFilter, countryFilter}) {
 
-    const renderRestaurants = restaurants.map(restaurant => <RestaurantCard key={restaurant.id} restaurant={restaurant}/>);
+    const renderRestaurants = restaurants
+    .filter(restaurant => restaurant.region.toLowerCase().includes(regionFilter.toLowerCase()))
+    .filter(restaurant => restaurant.country.toLowerCase().includes(countryFilter.toLowerCase()))
+    .map(restaurant => <RestaurantCard key={restaurant.id} restaurant={restaurant}/>);
 
     return (
         <main>

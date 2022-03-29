@@ -1,13 +1,73 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  display: flex;
+  flex-direction:row;
+}
+
+.sidebar {
+  min-height: 100vh;
+  min-width: 12em;  
+  width: 25%;
+  border-right: solid black 1px;
+  background: #16ff35;
+  margin-right: 10px;
+  /* position: relative; */
+}
+
+.cards {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  box-shadow: 0 0 7px 0 #ddd;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff2e6;
+  width: 225px;
+}
+
+#restaurant-image {
+  height: 200px;
+  width: 95%;
+  position: relative;
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.5em;
+}
+
+.text {
+  padding: 15px;
+  cursor: default;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #9cbec9;
+  border-radius: 6px;
+  outline: none;
+}
+
+.logo {
+  width: 36px;
+  height: 54px;
+  border-radius: 50px;
+}
+
+#restaurant {
+  display:inline;
+  vertical-align: top;
+  padding: 15px;
 }

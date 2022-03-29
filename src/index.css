@@ -14,7 +14,7 @@ body {
   border-right: solid black 1px;
   background: #16ff35;
   margin-right: 10px;
-  /* position: relative; */
+  /* position: absolute  ; */
 }
 
 .cards {
@@ -60,6 +60,8 @@ body {
   outline: none;
 }
 
+.button:hover {background-color: #9CBEE6}
+
 .logo {
   width: 36px;
   height: 54px;
@@ -70,4 +72,107 @@ body {
   display:inline;
   vertical-align: top;
   padding: 15px;
+}
+
+.new-Restaurant-form {
+  border-radius: 5px;
+  background: #fff2e6;
+  padding: 20px;
+}
+
+
+input[type=submit] {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: 80%;
+  left: 39%;
+}
+
+.newSubmit:hover {background-color: #3e8e41}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=url], select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.aboutUsBtn {
+  border-radius: 4px;
+  background-color: #25769c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.aboutUsBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+/* \00bb */
+.aboutUsBtn span:after {
+  content: '\25BF';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.aboutUsBtn:hover span {
+  padding-right: 25px;
+}
+
+.aboutUsBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+
+.iconBox {
+  text-align: center;
+  padding-right: 90px;
+  border-radius: 5px;
+}
+
+#problemBtn {
+  align-items: center;
+  
 }

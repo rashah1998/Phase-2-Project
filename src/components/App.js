@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import FilterBar from './FilterBar';
 import NewRestaurant from './NewRestaurant';
 import RestaurantList from './RestaurantList';
@@ -19,10 +20,12 @@ function App() {
     .then(resp => resp.json())
     .then(restaurantData => setRestaurants(restaurantData))
   }
+
   function handleFrontEnd(newRestaurantObject) {
     const addNewRestaurantObject = [...restaurants, newRestaurantObject]
       setRestaurants(addNewRestaurantObject);
-    }
+  }
+
   useEffect(getRestaurants, []);
 
   return (
@@ -38,14 +41,21 @@ function App() {
             setCountryFilter={setCountryFilter} 
             restaurants={restaurants}
           />
+          <Link to="/newRestaurant">Add a New Restaurant</Link>
         </div>
         <div className='restaurant-list'>
-          <NewRestaurant handleFrontEnd={handleFrontEnd}/>
-          <RestaurantList 
-            regionFilter={regionFilter} 
-            countryFilter={countryFilter} 
-            restaurants={restaurants}
-          />
+        <Switch>
+          <Route path="/newRestaurant">
+            <NewRestaurant handleFrontEnd={handleFrontEnd}/>
+          </Route>
+          <Route exact path="/">
+            <RestaurantList 
+              regionFilter={regionFilter} 
+              countryFilter={countryFilter} 
+              restaurants={restaurants}
+            />
+          </Route>
+        </Switch>
           <button className="aboutUsBtn" onClick={toggleShow}><span>About Us</span></button>
           {isShow ? <AboutUs /> : null}            
         </div>

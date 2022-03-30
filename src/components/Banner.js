@@ -1,5 +1,5 @@
-export default Banner;
 
+import { Link } from 'react-router-dom';
 function Banner(){
     return (
         <Link exact to="/">
@@ -10,3 +10,5 @@ function Banner(){
         </Link>
     )
 }
+
+export default Banner;

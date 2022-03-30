@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-=======
 import {Link } from 'react-router-dom';
->>>>>>> day3-wg
 
-import { Link } from 'react-router-dom';
 function Banner(){
     return (
         <Link exact to="/">

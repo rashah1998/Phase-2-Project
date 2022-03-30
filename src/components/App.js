@@ -3,6 +3,7 @@ import FilterBar from './FilterBar';
 import NewRestaurant from './NewRestaurant';
 import RestaurantList from './RestaurantList';
 import AboutUs from './AboutUs';
+import Banner from './Banner';
 function App() {
 
   const [restaurants, setRestaurants] = useState([]);
@@ -25,28 +26,29 @@ function App() {
   useEffect(getRestaurants, []);
 
   return (
-    <div className='app'>
-      <div className='sidebar'>
-        <h2>Sort Restaurants by:</h2>
-        <FilterBar
-          regionFilter={regionFilter}
-          countryFilter={countryFilter} 
-          setRegionFilter={setRegionFilter} 
-          setCountryFilter={setCountryFilter} 
-          restaurants={restaurants}
-        />
-      </div>
-      <div className='restaurant-list'>
-        <img className="logo" src={"https://m.media-amazon.com/images/I/71FvhMzUBRL._AC_SL1000_.jpg"} alt="logo" />
-        <h1 id="restaurant">Restaurants</h1>
-        <NewRestaurant handleFrontEnd={handleFrontEnd}/>
-        <RestaurantList 
-          regionFilter={regionFilter} 
-          countryFilter={countryFilter} 
-          restaurants={restaurants}
-        />
-        <button className="aboutUsBtn" onClick={toggleShow}><span>About Us</span></button>
-        {isShow ? <AboutUs /> : null}            
+    <div>
+      <Banner />
+      <div className='app'>
+        <div className='sidebar'>
+          <h2 id="sort">Sort by:</h2>
+          <FilterBar
+            regionFilter={regionFilter}
+            countryFilter={countryFilter} 
+            setRegionFilter={setRegionFilter} 
+            setCountryFilter={setCountryFilter} 
+            restaurants={restaurants}
+          />
+        </div>
+        <div className='restaurant-list'>
+          <NewRestaurant handleFrontEnd={handleFrontEnd}/>
+          <RestaurantList 
+            regionFilter={regionFilter} 
+            countryFilter={countryFilter} 
+            restaurants={restaurants}
+          />
+          <button className="aboutUsBtn" onClick={toggleShow}><span>About Us</span></button>
+          {isShow ? <AboutUs /> : null}            
+        </div>
       </div>
     </div>
   );

@@ -22,12 +22,10 @@ function AboutUs(){
                     <a href="https://www.linkedin.com/in/rahulshah98/" class="icon-wrapper">
                         <img className="icon" src={linkedinIcon}/>
                     </a>
-                   
-                    <button id="problemBtn"onClick={myClick}>
+                </div>
+                <button id="problemBtn" onClick={myClick}>
                    Facing a Problem?
                 </button>
-        
-                </div>
             </div>
     )
 }

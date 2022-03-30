@@ -1,4 +1,4 @@
-export default Banner;
+import {Link } from 'react-router-dom';
 
 function Banner(){
     return (
@@ -10,3 +10,5 @@ function Banner(){
         </Link>
     )
 }
+
+export default Banner;

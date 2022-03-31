@@ -7,6 +7,7 @@ function AboutUs({toggleShow, isShow}){
         alert("Too Bad, Deal with it tho 🙂");
     }
     return(
+        
             <div id="aboutUsBox">
                 <button className="aboutUsBtn" onClick={toggleShow}><span>About Us</span></button>
                 {isShow ? 

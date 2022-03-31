@@ -41,7 +41,7 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
                     {setCountryOptions(restaurants)}
                 </datalist>
             </div>
-            <input type="submit" value="Reset Form"/>
+            <input id="resetBtn" type="submit" value="Reset Form"/>
         </form>
     )
 }

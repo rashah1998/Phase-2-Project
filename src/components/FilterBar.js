@@ -15,9 +15,9 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
     }
 
     return(
-        <div>
+        <div id="filterContainer">
             <div id="filterByRegion">
-            <label>Choose a Region:</label>
+            <label id="firstText" className="sortText">Choose a Region:  </label>
             <input autoComplete="on"list="region-options" onChange={(e) => setRegionFilter(e.target.value)}/>
             </div>
             <div>
@@ -26,7 +26,7 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
                 </datalist>
             </div>
             <div id="filterByCountry">
-            <label>Choose a Country:</label>
+            <label className="sortText">Choose a Country:</label>
             <input autoComplete="on"list="country-options" onChange={(e) => setCountryFilter(e.target.value)}/>
             </div>
             <div>

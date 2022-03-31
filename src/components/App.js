@@ -41,7 +41,7 @@ function App() {
             setCountryFilter={setCountryFilter} 
             restaurants={restaurants}
           />
-          <Link to="/newRestaurant"><button id="addBtn">Add a New Restaurant</button></Link>
+          <Link to="/newRestaurant"><button id="addBtn">Add Your Favorite Restaurant</button></Link>
         </div>
         <div className='restaurant-list'>
         <Switch>

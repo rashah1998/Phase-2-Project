@@ -7,6 +7,7 @@ function AboutUs(){
         alert("Too Bad, Deal with it tho 🙂");
     }
     return(
+        
             <div id="aboutUsBox">
                 <h1>The Melting Pot</h1>
                 <p>We wanted to create a webpage to make it easier</p>

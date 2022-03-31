@@ -1,0 +1,4 @@
+{
+    "/restaurants/:id": "/restaurants/:id?_embed=reviews"
+}
+  

@@ -5,13 +5,13 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
         const regionOptions = [...new Set(restaurants
             .filter(restaurant => restaurant.country.toLowerCase().includes(countryFilter.toLowerCase()))
             .map(restaurant => restaurant.region))];
-        return (regionOptions.map(region => <option value={region}/>))
+        return (regionOptions.map((region, index) => <option key={index} value={region}/>))
     }
     function setCountryOptions(restaurants) {
         const countryOptions = [...new Set(restaurants
             .filter(restaurant => restaurant.region.toLowerCase().includes(regionFilter.toLowerCase()))
             .map(restaurant => restaurant.country))];
-        return (countryOptions.map(country => <option value={country}/>))
+        return (countryOptions.map((country, index) => <option key={index} value={country}/>))
     }
 
     function handleReset(e) {
@@ -24,7 +24,7 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
     return(
         <form id="filterContainer" onSubmit={(e) => handleReset(e)}>
             <div id="filterByRegion">
-            <label id="firstText" className="sortText">Choose a Region:  </label>
+            <label id="firstText" className="sortText">Region:  </label>
             <input autoComplete="on"list="region-options" onChange={(e) => setRegionFilter(e.target.value)}/>
             </div>
             <div>
@@ -33,7 +33,7 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
                 </datalist>
             </div>
             <div id="filterByCountry">
-            <label className="sortText">Choose a Country:</label>
+            <label className="sortText">Country:</label>
             <input autoComplete="on"list="country-options" onChange={(e) => setCountryFilter(e.target.value)}/>
             </div>
             <div>
@@ -41,7 +41,7 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
                     {setCountryOptions(restaurants)}
                 </datalist>
             </div>
-            <input type="submit" value="Reset Form"/>
+            <input type="submit" value="Reset Filters"/>
         </form>
     )
 }

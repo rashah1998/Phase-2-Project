@@ -5,6 +5,7 @@ import NewRestaurant from './NewRestaurant';
 import RestaurantList from './RestaurantList';
 import AboutUs from './AboutUs';
 import Banner from './Banner';
+import RestaurantDetail from './RestaurantDetail';
 function App() {
 
   const [restaurants, setRestaurants] = useState([]);
@@ -33,7 +34,7 @@ function App() {
       <Banner />
       <div className='app'>
         <div className='sidebar'>
-          <h2 id="sort">Sort by:</h2>
+          <h2 id="sort">Sort Restaurants by:</h2>
           <FilterBar
             regionFilter={regionFilter}
             countryFilter={countryFilter} 
@@ -41,7 +42,7 @@ function App() {
             setCountryFilter={setCountryFilter} 
             restaurants={restaurants}
           />
-          <Link to="/newRestaurant"><button id="addBtn">Add a New Restaurant</button></Link>
+          <Link to="/newRestaurant"><button id="addBtn">Add Your Favorite Restaurant!</button></Link>
         </div>
         <div className='restaurant-list'>
         <Switch>
@@ -55,10 +56,13 @@ function App() {
               restaurants={restaurants}
             />
           </Route>
+          <Route path="/:id">
+            <RestaurantDetail />
+          </Route>
         </Switch>          
         </div>
-        <AboutUs toggleShow={toggleShow} isShow={isShow}/>
       </div>
+      <AboutUs toggleShow={toggleShow} isShow={isShow}/>
     </div>
   );
 }

@@ -55,10 +55,9 @@ function App() {
               restaurants={restaurants}
             />
           </Route>
-        </Switch>
-          <button className="aboutUsBtn" onClick={toggleShow}><span>About Us</span></button>
-          {isShow ? <AboutUs /> : null}            
+        </Switch>          
         </div>
+        <AboutUs toggleShow={toggleShow} isShow={isShow}/>
       </div>
     </div>
   );

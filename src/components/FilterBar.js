@@ -14,8 +14,15 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
         return (countryOptions.map(country => <option value={country}/>))
     }
 
+    function handleReset(e) {
+        e.preventDefault();
+        e.target.reset();
+        setCountryFilter('');
+        setRegionFilter('');
+    }
+
     return(
-        <div id="filterContainer">
+        <form id="filterContainer" onSubmit={(e) => handleReset(e)}>
             <div id="filterByRegion">
             <label id="firstText" className="sortText">Choose a Region:  </label>
             <input autoComplete="on"list="region-options" onChange={(e) => setRegionFilter(e.target.value)}/>
@@ -34,7 +41,8 @@ function FilterBar({setRegionFilter, setCountryFilter, restaurants, regionFilter
                     {setCountryOptions(restaurants)}
                 </datalist>
             </div>
-        </div>
+            <input type="submit" value="Reset Form"/>
+        </form>
     )
 }
 

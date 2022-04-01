@@ -390,3 +390,32 @@ input[type=url], select{
 #card-name:visited {
   color: purple;
 }
+
+#showReviewForm{
+  border-radius: 4px;
+  background-color: #25769c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 17px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+#SubmitReview{
+  margin-right: 78%;
+}
+
+#reviewForm input[type="text"]{
+  width: 75%;
+  margin-left: 5px;
+}
+#reviewForm input[type="number"]{
+  width:13%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

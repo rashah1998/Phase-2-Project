@@ -274,7 +274,7 @@ input[type=url], select{
 
 #sort{
   margin-left: 3px;
-  font-size: 18px;
+  /* font-size: 18px; */
 }
 
 #banner {
@@ -431,4 +431,17 @@ input[type=url], select{
   text-align: center;
   padding-left: 6px;
   font-size: 17px;
+}
+
+#favoriteRestaurant a{
+  text-decoration: none;
+  color: black;
+}
+
+#favoriteRestaurant a:hover{
+  text-decoration: underline;
+}
+
+#favoriteRestaurant li {
+  margin-bottom: 10px;
 }

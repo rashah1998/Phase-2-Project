@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from 'react';
 import Review from "./Review";
 
-function RestaurantDetail() {
+function RestaurantDetail({updateRating, setUpdateRating}) {
     const {id} = useParams();
     const [restaurant, setRestaurant] = useState(null);
     const [reviews, setReviews] = useState(null);
@@ -38,11 +38,22 @@ function RestaurantDetail() {
         .then((r) => r.json())
         .then((newReview) => setReviews([...reviews, newReview]))
 
-        e.target.reset();
+        fetch(`http://localhost:3001/restaurants/${id}`, {
+        method : "PATCH",
+        headers : { "Content-Type": "application/json",
+        Accepts: "application/json",},
+        body: JSON.stringify({avgRating: parseInt(avgRatingForPatch)}),
+        })
+        .then((r) => r.json())
+        .then(setUpdateRating(!updateRating))
 
+
+        e.target.reset();
     }
 
     if(!isLoaded) return null;
+
+    let avgRatingForPatch = 0;
 
     const averageRating = function() {
         let average = 0;
@@ -52,10 +63,22 @@ function RestaurantDetail() {
             reviews.forEach(review => {
                 average += review.rating;
             })
+            avgRatingForPatch = average/reviews.length;
             average = Math.round((average/(reviews.length)) * 10)/10;
             return <h2>Average Rating: {average}/5</h2>;
         }
     }
+
+    // function avgRatingForPatch() {
+    //     let average = 0;
+    //     reviews.forEach(review => {
+    //         average += review.rating;
+    //         console.log(average)
+    //     })
+    //     average = (average/reviews.length);
+    //     console.log(average)
+    //     return average;
+    // }
 
     const {image, name, url, address, region, country} = restaurant;
 

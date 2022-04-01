@@ -13,7 +13,7 @@ function App() {
   const [countryFilter, setCountryFilter] = useState('');
   const [isShow , setShow] = useState(false);
   const [newLike, setNewLike] = useState(false);
-  console.log(newLike);
+  const [updateRating, setUpdateRating] = useState(false);
 
   function toggleShow() {
     setShow(!isShow)
@@ -35,7 +35,7 @@ function App() {
     }
   })
 
-  useEffect(getRestaurants, [newLike]);
+  useEffect(getRestaurants, [newLike, updateRating]);
 
   return (
     <div>
@@ -52,7 +52,7 @@ function App() {
           />
           <Link to="/newRestaurant"><button id="addBtn">Add Your Favorite Restaurant!</button></Link>
           <h2>Liked Restaurants:</h2>
-          <ol>
+          <ol id="favoriteRestaurant">
             {renderLikedRestaurants}
           </ol>
         </div>
@@ -71,7 +71,7 @@ function App() {
             />
           </Route>
           <Route path="/:id">
-            <RestaurantDetail />
+            <RestaurantDetail updateRating={updateRating} setUpdateRating={setUpdateRating}/>
           </Route>
         </Switch>          
         </div>

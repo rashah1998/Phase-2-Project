@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function RestaurantCard({ restaurant, newLike, setNewLike }) {
 
-    const { id, region, country, image, url, address, name } = restaurant;
+    const { id, region, country, image, url, address, name, avgRating } = restaurant;
     let { like } = restaurant;
     const [liked, setLiked] = useState(like);
 
@@ -24,6 +24,8 @@ function RestaurantCard({ restaurant, newLike, setNewLike }) {
         })
     }
 
+    const average = Math.round((avgRating) * 10)/10;
+
     return (
             <li className="card">
                 <div className="text">
@@ -33,6 +35,7 @@ function RestaurantCard({ restaurant, newLike, setNewLike }) {
                     </Link>
                     <p>{region}, {country}</p>
                     <h5>{address}</h5>
+                    <h4>Rating: {average}</h4>
                     <a className="button" href={url}>Order Here</a>
                     {liked ? <button id='like-button-red' onClick={handleLike}>❤️</button>
                         : <button id='like-button-white' onClick={handleLike}>🤍</button>}

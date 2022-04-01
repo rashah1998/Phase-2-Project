@@ -35,7 +35,7 @@ function RestaurantCard({ restaurant, newLike, setNewLike }) {
                     </Link>
                     <p>{region}, {country}</p>
                     <h5>{address}</h5>
-                    <h4>Rating: {average}</h4>
+                    {average === 0 ? (<h4>Rating: No Reviews Yet</h4>) : (<h4>Rating: {average}</h4>) }
                     <a className="button" href={url}>Order Here</a>
                     {liked ? <button id='like-button-red' onClick={handleLike}>❤️</button>
                         : <button id='like-button-white' onClick={handleLike}>🤍</button>}

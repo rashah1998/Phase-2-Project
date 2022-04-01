@@ -10,6 +10,7 @@ function RestaurantDetail() {
     const [showForm, setShowForm] = useState(false);
     const [rating, setRating] = useState(null)
     const [comment, setComment] = useState("")
+
     useEffect(() => {
         fetch(`http://localhost:3001/restaurants/${id}`)
           .then((resp) => resp.json())
@@ -40,8 +41,21 @@ function RestaurantDetail() {
         e.target.reset();
 
     }
-    
+
     if(!isLoaded) return null;
+
+    const averageRating = function() {
+        let average = 0;
+        if(reviews.length === 0) {
+            return null;
+        } else {
+            reviews.forEach(review => {
+                average += review.rating;
+            })
+            average = Math.round((average/(reviews.length)) * 10)/10;
+            return <h2>Average Rating: {average}/5</h2>;
+        }
+    }
 
     const {image, name, url, address, region, country} = restaurant;
 
@@ -63,6 +77,7 @@ function RestaurantDetail() {
             </div>
             <div id="reviews-container">
                 <h1>Reviews</h1>
+                {averageRating()}
                 {reviews.length === 0 ? <h3>No Reviews Yet. Add a New Review Below!</h3> : renderReviews}
                 <button id="showReviewForm" onClick={() => setShowForm(!showForm)}><span>Add a Review</span></button>
             {showForm? 

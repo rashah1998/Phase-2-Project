@@ -12,6 +12,8 @@ function App() {
   const [regionFilter, setRegionFilter] = useState('');
   const [countryFilter, setCountryFilter] = useState('');
   const [isShow , setShow] = useState(false);
+  const [newLike, setNewLike] = useState(false);
+  console.log(newLike);
 
   function toggleShow() {
     setShow(!isShow)
@@ -27,7 +29,13 @@ function App() {
       setRestaurants(addNewRestaurantObject);
   }
 
-  useEffect(getRestaurants, []);
+  const renderLikedRestaurants = restaurants.map(restaurant => {
+    if (restaurant.like === true) {
+      return <li key={restaurant.id}><Link to={`/${restaurant.id}`}>{restaurant.name}</Link></li>
+    }
+  })
+
+  useEffect(getRestaurants, [newLike]);
 
   return (
     <div>
@@ -43,6 +51,10 @@ function App() {
             restaurants={restaurants}
           />
           <Link to="/newRestaurant"><button id="addBtn">Add Your Favorite Restaurant!</button></Link>
+          <h2>Liked Restaurants:</h2>
+          <ol>
+            {renderLikedRestaurants}
+          </ol>
         </div>
         <div className='restaurant-list'>
         <Switch>
@@ -54,6 +66,8 @@ function App() {
               regionFilter={regionFilter} 
               countryFilter={countryFilter} 
               restaurants={restaurants}
+              setNewLike={setNewLike}
+              newLike={newLike}
             />
           </Route>
           <Route path="/:id">

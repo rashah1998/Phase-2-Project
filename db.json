@@ -9,7 +9,7 @@
       "url": "https://www.farida.us/menu",
       "address": "498 9th Ave, New York, NY 10018",
       "like": true,
-      "avgRating": 4.5
+      "avgRating": 3.6
     },
     {
       "id": 2,
@@ -19,7 +19,7 @@
       "image": "https://scontent.fewr1-6.fna.fbcdn.net/v/t1.18169-9/11050806_589502181192974_2145038430783411147_n.png?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=RNf8fu9WP8AAX8PZqbU&_nc_ht=scontent.fewr1-6.fna&oh=00_AT9h91mUxeXDi5G3ywbQ9tWuxl0FYRprZ51VPtKNxZ-I6A&oe=62691EA5",
       "url": "http://places.singleplatform.com/b--b-restaurant-corp/menu?ref=google",
       "address": "165 W 26th St, New York, NY 10001",
-      "like": false,
+      "like": true,
       "avgRating": 2.5
     },
     {
@@ -31,7 +31,7 @@
       "url": "http://www.kheyo.com/menus",
       "address": "157 Duane St, New York, NY 10013",
       "like": false,
-      "avgRating": 3.3333333333333
+      "avgRating": 2.75
     },
     {
       "id": 4,
@@ -64,7 +64,7 @@
       "url": "https://www.ililirestaurants.com/ilili-nyc-menu/",
       "address": "236 5th Ave, New York, NY 10001",
       "like": false,
-      "avgRating": 1
+      "avgRating": 2
     },
     {
       "id": 7,
@@ -86,7 +86,7 @@
       "url": "http://places.singleplatform.com/b--b-restaurant-corp/menu?ref=google",
       "address": "165 W 26th St, New York, NY 10001",
       "like": true,
-      "avgRating": 4
+      "avgRating": 3.5
     },
     {
       "id": 9,
@@ -174,7 +174,7 @@
       "url": "https://amboeats.com/",
       "address": "55C E 8th St, New York, NY 10003",
       "like": true,
-      "avgRating": 5
+      "avgRating": 3
     },
     {
       "id": 17,
@@ -383,7 +383,7 @@
       "address": "93 Avenue B, New York, NY 10009",
       "id": 35,
       "like": false,
-      "avgRating": null
+      "avgRating": 5
     }
   ],
   "reviews": [
@@ -602,6 +602,54 @@
       "restaurantId": 19,
       "rating": 3,
       "comments": "This place was nearby and I decided to check it out. The waiter was mediocre at best. Overhyped. The food was all right but seriously lacked presentation. This place deserves its very average rating."
+    },
+    {
+      "restaurantId": 1,
+      "rating": 2,
+      "comments": "meh",
+      "id": 37
+    },
+    {
+      "restaurantId": 16,
+      "rating": 1,
+      "comments": "ew",
+      "id": 38
+    },
+    {
+      "restaurantId": 6,
+      "rating": 4,
+      "comments": "expensive",
+      "id": 39
+    },
+    {
+      "restaurantId": 1,
+      "rating": 3,
+      "comments": "meh",
+      "id": 40
+    },
+    {
+      "restaurantId": 35,
+      "rating": 5,
+      "comments": "good",
+      "id": 41
+    },
+    {
+      "restaurantId": 8,
+      "rating": 3,
+      "comments": "ew",
+      "id": 42
+    },
+    {
+      "restaurantId": 3,
+      "rating": 1,
+      "comments": "ew",
+      "id": 43
+    },
+    {
+      "restaurantId": 1,
+      "rating": 4,
+      "comments": "good..",
+      "id": 44
     }
   ]
 }
